@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Табло</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+</head>
+<body>
+<div th:replace="~{navbar :: nav}"></div>
+
+<section class="featured-banner">
+    <h2>Добре дошли в игровата платформа</h2>
+</section>
+
+<div class="container">
+    <h1>Здравейте, <span th:text="${username}">Потребител</span>!</h1>
+    <p>Добре дошли в таблото си.</p>
+
+    <div class="navigation">
+        <a th:href="@{/games}" class="button">Виж игри</a>
+        <a th:href="@{/invitations}" class="button">Виж покани</a>
+        <a th:href="@{/participants/history/1}" class="button">Виж история</a>
+        <a th:href="@{/tournaments/create}" class="button">Създай турнир</a>
+    </div>
+
+    <div class="create-game">
+        <h2>Създай нова игра</h2>
+        <form th:action="@{/games/create}" method="get">
+            <button type="submit" class="button">Създай игра</button>
+        </form>
+    </div>
+</div>
+
+<footer class="simple-footer">
+    <p>© 2025 MyBrand. Всички права запазени.</p>
+    <p>
+        <a href="#">Политика за поверителност</a> |
+        <a href="#">Правна информация</a> |
+        <a href="#">Поддръжка</a>
+    </p>
+</footer>
+</body>
+</html>

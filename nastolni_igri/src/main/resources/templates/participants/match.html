@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Мач</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/match.css}">
+</head>
+<body class="steam-bg">
+<!-- Навигационна лента -->
+<div th:replace="navbar :: nav"></div>
+
+<div class="container">
+    <h1>Мач</h1>
+
+    <div>
+        <h2>Играчите</h2>
+        <p>
+            <span th:text="${player1.user.username}"></span> срещу
+            <span th:text="${player2.user.username}"></span>
+        </p>
+    </div>
+
+    <div>
+        <h2>Резултати</h2>
+        <p>
+            <span th:text="${player1.user.username}"></span>: <span th:text="${score1}"></span>
+        </p>
+        <p>
+            <span th:text="${player2.user.username}"></span>: <span th:text="${score2}"></span>
+        </p>
+    </div>
+
+    <div>
+        <h2>Победител</h2>
+        <p th:text="${winner.user.username}"></p>
+    </div>
+
+    <form th:action="@{/participants/{gameId}(gameId=${gameId})}" method="get">
+        <button type="submit">Назад към участниците</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* Basic Dark Theme */
+body.steam-bg {
+    margin: 0;
+    padding: 0;
+    background-color: #1b1b1b;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #c7d5e0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2f3743;
+    border: 1px solid #3b4552;
+    border-radius: 8px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #3b4552;
+    border-radius: 4px;
+    background-color: #1b1b1b;
+    color: #c7d5e0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #66c0f4;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #549bbf;
+}
+
+/* Minimal 2-player bracket */
+.bracket {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.round1, .final {
+    background-color: #1b1b1b;
+    border: 1px solid #3b4552;
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+    min-width: 150px;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: #66c0f4;
+    margin: 0 10px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" th:href="@{/css/authenticationForms.css}">
+</head>
+<body class="steam-bg">
+<header class="steam-header">
+    <div class="logo-section">
+        <a href="#" class="logo">Gamify</a>
+    </div>
+</header>
+
+<div class="login-container">
+    <div class="login-panel">
+        <h1>Регистрация</h1>
+        <form th:action="@{/users/register}" method="post">
+            <div class="form-group">
+                <label for="username">Име на акаунта:</label>
+                <input type="text" id="username" name="username" required placeholder="Въведете потребителско име">
+            </div>
+            <div class="form-group">
+                <label for="email">Имейл:</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+                <label for="password">Парола:</label>
+                <input type="password" id="password" name="password" required placeholder="Въведете парола">
+            </div>
+            <button type="submit" class="register-btn">Регистрирай</button>
+        </form>
+        <p class="login-link">
+            Вече имате акаунт? <a th:href="@{/users/login}">Влезте тук</a>.
+        </p>
+    </div>
+</div>
+
+<footer class="simple-footer">
+    <p>© 2025 Gamify. Всички права запазени.</p>
+    <p>
+        <a href="#">Политика за поверителност</a> |
+        <a href="#">Правна информация</a> |
+        <a href="#">Поддръжка</a>
+    </p>
+</footer>
+</body>
+</html>

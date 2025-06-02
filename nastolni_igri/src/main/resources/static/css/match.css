@@ -1,0 +1,54 @@
+/* Base Styles */
+body.steam-bg {
+    margin: 0;
+    padding: 0;
+    background-color: #1b1b1b;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #c7d5e0;
+}
+
+/* Container for Match Page */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2f3743;
+    border: 1px solid #3b4552;
+    border-radius: 8px;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #66c0f4;
+    margin-bottom: 10px;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Button styling */
+button {
+    background-color: #66c0f4;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+button:hover {
+    background-color: #549bbf;
+}

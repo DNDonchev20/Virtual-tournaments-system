@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>История на мачовете</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/matchHistory.css}">
+</head>
+<body class="steam-bg">
+<div th:replace="~{navbar :: nav}"></div>
+
+<div class="container">
+    <h1>История на мачовете</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Играч 1</th>
+            <th>Резултат</th>
+            <th>Играч 2</th>
+            <th>Резултат</th>
+            <th>Победител</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="match : ${matchHistory}">
+            <td th:text="${match.player1.username}"></td>
+            <td th:text="${match.player1Score}"></td>
+            <td th:text="${match.player2.username}"></td>
+            <td th:text="${match.player2Score}"></td>
+            <td th:text="${match.player1Score > match.player2Score ? match.player1.username : (match.player1Score < match.player2Score ? match.player2.username : 'Равенство')}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/games" class="btn">Назад към игрите</a>
+</div>
+</body>
+</html>

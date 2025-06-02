@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Изпрати покана</title>
+    <link rel="stylesheet" th:href="@{/css/invitations.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body class="steam-bg">
+<div th:replace="navbar :: nav"></div>
+<div class="container">
+    <h1>Изпрати покана</h1>
+    <form th:action="@{/invitations/send}" method="post">
+        <input type="hidden" name="gameId" th:value="${game.id}">
+        <div class="form-group">
+            <label for="recipientId">Получател:</label>
+            <select id="recipientId" name="recipientId">
+                <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.username}"></option>
+            </select>
+        </div>
+        <button type="submit" class="button">Изпрати покана</button>
+    </form>
+</div>
+</body>
+</html>

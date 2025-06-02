@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Покани</title>
+    <link rel="stylesheet" th:href="@{/css/invitations.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body class="steam-bg">
+<div th:replace="navbar :: nav"></div>
+<div class="container">
+    <h1>Моите покани</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Име на играта</th>
+            <th>Изпращач</th>
+            <th>Статус</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="invitation : ${invitations}">
+            <td th:text="${invitation.game.name}">Име на играта</td>
+            <td th:text="${invitation.sender.username}">Изпращач</td>
+            <td th:text="${invitation.accepted ? 'Приета' : 'Очаква'}">Статус</td>
+            <td>
+                <form th:action="@{/invitations/accept}" method="post" style="display:inline;">
+                    <input type="hidden" name="invitationId" th:value="${invitation.id}">
+                    <button type="submit" th:disabled="${invitation.accepted}">Приеми</button>
+                </form>
+                <form th:action="@{/invitations/decline}" method="post" style="display:inline;">
+                    <input type="hidden" name="invitationId" th:value="${invitation.id}">
+                    <button type="submit" th:disabled="${invitation.accepted}">Откажи</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

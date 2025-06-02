@@ -1,0 +1,96 @@
+/* Base Styles */
+body.steam-bg {
+    margin: 0;
+    padding: 0;
+    background-color: #1b1b1b;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #c7d5e0;
+}
+
+/* Container for page content */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2f3743;
+    border: 1px solid #3b4552;
+    border-radius: 8px;
+}
+
+/* Headings */
+.container h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #3b4552;
+    text-align: center;
+}
+
+table th {
+    background-color: #2a475e;
+    color: #fff;
+}
+
+/* Form and Button Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #c7d5e0;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #3b4552;
+    border-radius: 4px;
+    background-color: #1b1b1b;
+    color: #c7d5e0;
+}
+
+button, .button {
+    background-color: #66c0f4;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #549bbf;
+}
+
+/* Back Link Styling if needed */
+a.btn {
+    display: block;
+    text-align: center;
+    background-color: #66c0f4;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+}
+
+a.btn:hover {
+    background-color: #549bbf;
+}

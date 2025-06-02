@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Създай игра</title>
+  <link rel="stylesheet" th:href="@{/css/navbar.css}">
+  <link rel="stylesheet" th:href="@{/css/createGame.css}">
+</head>
+<body class="steam-bg">
+<div th:replace="navbar :: nav"></div>
+
+<div class="container">
+  <h1>Създай нова игра</h1>
+
+  <!-- Показване на съобщение за грешка, ако има параметър за грешка -->
+  <div th:if="${param.error}" class="error">
+    <p th:text="${param.error}"></p>
+  </div>
+
+  <form th:action="@{/games/create}" method="post">
+    <div class="form-group">
+      <label for="name">Име на играта:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <button type="submit" class="button">Създай игра</button>
+  </form>
+</div>
+
+<!-- Прост футър -->
+<footer class="simple-footer">
+  <p>© 2025 MyBrand. Всички права запазени.</p>
+  <p>
+    <a href="#">Политика за поверителност</a> |
+    <a href="#">Правни</a> |
+    <a href="#">Поддръжка</a>
+  </p>
+</footer>
+</body>
+</html>

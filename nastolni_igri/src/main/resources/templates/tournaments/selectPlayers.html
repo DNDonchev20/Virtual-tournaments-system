@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Изберете играчи</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/tournament.css}">
+</head>
+<body class="steam-bg">
+<div th:replace="~{navbar :: nav}"></div>
+
+<div class="container">
+    <h1>Изберете двама играчи</h1>
+    <form th:action="@{/tournaments/selectPlayers}" method="post">
+        <input type="hidden" name="gameId" th:value="${gameId}">
+
+        <div class="form-group">
+            <label for="player1Id">Играч 1:</label>
+            <select id="player1Id" name="player1Id">
+                <option th:each="user : ${users}"
+                        th:value="${user.id}"
+                        th:text="${user.username}">Потребителско име</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="player2Id">Играч 2:</label>
+            <select id="player2Id" name="player2Id">
+                <option th:each="user : ${users}"
+                        th:value="${user.id}"
+                        th:text="${user.username}">Потребителско име</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn">Потвърдете играчите</button>
+    </form>
+</div>
+</body>
+</html>

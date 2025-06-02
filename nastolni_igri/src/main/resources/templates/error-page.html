@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Грешка</title>
+    <link rel="stylesheet" th:href="@{/css/error.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body class="steam-bg">
+<div th:replace="navbar :: nav"></div>
+<div class="container">
+    <h1>Възникна грешка</h1>
+    <p th:text="${errorMessage}">Нещо се обърка.</p>
+    <a href="/games" class="btn">Назад към игрите</a>
+</div>
+</body>
+</html>

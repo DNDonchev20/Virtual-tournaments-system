@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Турнирна схема</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/tournament.css}">
+</head>
+<body class="steam-bg">
+<div th:replace="~{navbar :: nav}"></div>
+
+<div class="container">
+    <h1>Турнирна схема (2 играчи)</h1>
+
+    <div class="bracket">
+        <div class="round1">
+            <p th:if="${participants.size() == 2}"
+               th:text="${participants.get(0).user.username} + ' срещу ' + ${participants.get(1).user.username}">
+                Играч1 срещу Играч2
+            </p>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="final">
+            <!-- If a match exists, display the winner; otherwise, display "Expected" -->
+            <p th:if="${match != null}"
+               th:text="${match.player1Score > match.player2Score ? 'Победител: ' + match.player1.username : (match.player1Score < match.player2Score ? 'Победител: ' + match.player2.username : 'Равенство')}">
+                Победител: Очаква се
+            </p>
+            <p th:unless="${match != null}">Победител: Очаква се</p>
+        </div>
+    </div>
+
+    <!-- Button to create match and view ranking -->
+    <form th:action="@{/tournaments/createMatch}" method="post">
+        <input type="hidden" name="gameId" th:value="${gameId}">
+        <button type="submit" class="btn">Създай мач и виж класиране</button>
+    </form>
+</div>
+</body>
+</html>

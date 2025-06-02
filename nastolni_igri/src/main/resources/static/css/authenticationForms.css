@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.steam-bg {
+    background-color: #1b1b1b;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #c7d5e0;
+    margin: 0;
+    padding: 0;
+}
+
+.steam-header {
+    display: flex;
+    align-items: center;
+    background-color: #2a475e;
+    padding: 10px 20px;
+}
+
+.logo-section .logo {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-left: 40px;
+}
+
+.main-nav a {
+    color: #c7d5e0;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.main-nav a:hover {
+    color: #fff;
+}
+
+.header-actions {
+    margin-left: auto;
+}
+
+.install-btn {
+    background-color: #5c7e10;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+.install-btn:hover {
+    background-color: #6fa613;
+}
+
+.login-container,
+.register-container {
+    /* Set your background image here */
+    background: url('../images/forms_bg.jpg') center center no-repeat;
+    background-size: cover;
+
+    /* Spacing to ensure footer is visible */
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+/* Shared panel styling for login/register forms */
+.login-panel,
+.register-panel {
+    background-color: #2f3743;
+    border: 1px solid #3b4552;
+    padding: 30px;
+    width: 350px;
+    border-radius: 5px;
+}
+
+.login-panel h1,
+.register-panel h1 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #c7d5e0;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #3b4552;
+    border-radius: 3px;
+    background-color: #1b1b1b;
+    color: #c7d5e0;
+    font-size: 1rem;
+}
+
+.form-group input::placeholder {
+    color: #6c7a89;
+}
+
+.login-btn,
+.register-btn {
+    width: 100%;
+    background-color: #66c0f4;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+.login-btn:hover,
+.register-btn:hover {
+    background-color: #549bbf;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #c7d5e0;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.forgot-link {
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #66c0f4;
+}
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #ff4c4c;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.qr-section {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #3b4552;
+    padding-top: 20px;
+}
+.qr-section h3 {
+    margin-bottom: 10px;
+}
+.qr-code {
+    width: 150px;
+    height: 150px;
+}
+
+.register-link,
+.login-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.register-link a,
+.login-link a {
+    color: #66c0f4;
+    text-decoration: none;
+}
+.register-link a:hover,
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.simple-footer {
+    background-color: #171a21;
+    color: #c7d5e0;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.simple-footer a {
+    color: #66c0f4;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.simple-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .login-panel,
+    .register-panel {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

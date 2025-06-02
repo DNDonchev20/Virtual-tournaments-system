@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Създай турнир</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/tournament.css}">
+</head>
+<body class="steam-bg">
+<div th:replace="~{navbar :: nav}"></div>
+
+<div class="container">
+    <h1>Създай нов турнир</h1>
+    <form th:action="@{/tournaments/create}" method="post">
+        <div class="form-group">
+            <label for="name">Име на турнира:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <button type="submit" class="btn">Създай турнир</button>
+    </form>
+</div>
+</body>
+</html>

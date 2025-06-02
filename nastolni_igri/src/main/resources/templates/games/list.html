@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Игри</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/game.css}">
+</head>
+<body class="steam-bg">
+<!-- Фрагмент на навигационната лента -->
+<div th:replace="navbar :: nav"></div>
+
+<div class="container">
+    <h1>Игри</h1>
+    <!-- Списък с игри -->
+    <div class="games-list">
+        <!-- Вземаме както обекта игра, така и индексът на итерацията -->
+        <div class="game-item"
+             th:each="game, iterStat : ${games}"
+             th:with="idx=${iterStat.index}">
+
+            <div class="game-thumbnail">
+                <img th:src="@{'/images/game__' + ${idx % 3} + '.jpg'}"
+                     alt="Плакат на играта" />
+            </div>
+
+            <!-- Детайли за играта -->
+            <div class="game-details">
+                <h2 th:text="${game.name}">Име на игра</h2>
+
+                <!-- Бутони за действие -->
+                <div class="game-actions">
+                    <!-- Бутон за присъединяване -->
+                    <form th:action="@{/participants/{id}/join(id=${game.id})}"
+                          method="post">
+                        <button type="submit" id="join-button">Присъедини се</button>
+                    </form>
+
+                    <!-- Бутон за преглед на участниците -->
+                    <form th:action="@{/participants/list/{id}(id=${game.id})}"
+                          method="get">
+                        <button type="submit">Виж участниците</button>
+                    </form>
+
+                    <!-- Бутон за преглед на чата -->
+                    <form th:action="@{/games/{id}/chat(id=${game.id})}"
+                          method="get">
+                        <button type="submit">Виж чата</button>
+                    </form>
+
+                    <!-- Бутон за изпращане на покана -->
+                    <form th:action="@{/invitations/send}" method="get">
+                        <input type="hidden" name="gameId" th:value="${game.id}">
+                        <button type="submit">Изпрати покана</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Изберете игра за турнир</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/tournament.css}">
+</head>
+<body class="steam-bg">
+<div th:replace="~{navbar :: nav}"></div>
+
+<div class="container">
+    <h1>Изберете съществуваща игра за турнир</h1>
+    <form th:action="@{/tournaments/selectGame}" method="post">
+        <div class="form-group">
+            <label for="gameId">Изберете игра:</label>
+            <select id="gameId" name="gameId">
+                <option th:each="game : ${games}"
+                        th:value="${game.id}"
+                        th:text="${game.name}">Име на игра</option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Използвай тази игра</button>
+    </form>
+    <a href="/users/dashboard" class="btn">Назад към таблото</a>
+</div>
+</body>
+</html>

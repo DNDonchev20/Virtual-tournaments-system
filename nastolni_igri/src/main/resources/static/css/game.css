@@ -1,0 +1,89 @@
+/* Dark background & basic font */
+body.steam-bg {
+    margin: 0;
+    padding: 0;
+    background-color: #1b1b1b;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #c7d5e0;
+}
+
+/* Main container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2f3743;
+    border: 1px solid #3b4552;
+    border-radius: 8px;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Games list container */
+.games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Each game row */
+.game-item {
+    display: flex;
+    background-color: #1b1b1b;
+    border: 1px solid #3b4552;
+    border-radius: 5px;
+    padding: 10px;
+    align-items: center;
+}
+
+.game-thumbnail {
+    margin-right: 15px;
+}
+
+.game-thumbnail img {
+    width: 120px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Game details & actions */
+.game-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.game-details h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.game-actions {
+    margin-top: 10px;
+}
+
+.game-actions form {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.game-actions button {
+    background-color: #66c0f4;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.game-actions button:hover {
+    background-color: #549bbf;
+}

@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1b1b1b;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #c7d5e0;
+}
+
+.featured-banner {
+    background: url('../images/dashboard_bg.jpg') center center / cover no-repeat;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+}
+
+.featured-banner h2 {
+    font-size: 2rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2f3743;
+    border: 1px solid #3b4552;
+    border-radius: 8px;
+}
+
+/* Headings & paragraphs */
+.container h1 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.container p {
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Navigation section (buttons) */
+.navigation {
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #66c0f4;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #549bbf;
+}
+
+/* Create game section styling */
+.create-game {
+    background-color: #1b1b1b;
+    border: 1px solid #3b4552;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.create-game h2 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* footer */
+.simple-footer {
+    background-color: #171a21;
+    color: #c7d5e0;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+}
+
+.simple-footer p {
+    margin: 5px 0;
+}
+
+.simple-footer a {
+    color: #66c0f4;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 0.85rem;
+}
+
+.simple-footer a:hover {
+    text-decoration: underline;
+}

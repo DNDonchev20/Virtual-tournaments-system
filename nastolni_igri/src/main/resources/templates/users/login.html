@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link rel="stylesheet" th:href="@{/css/authenticationForms.css}">
+</head>
+<body class="steam-bg">
+<header class="steam-header">
+    <div class="logo-section">
+        <a href="#" class="logo">Gamify</a>
+    </div>
+</header>
+
+<div class="login-container">
+    <div class="login-panel">
+        <h1>Вход</h1>
+        <form th:action="@{/users/perform-login}" method="post">
+            <div class="form-group">
+                <label for="username">Влез с потребителско име</label>
+                <input type="text" id="username" name="username" required placeholder="Потребителско име">
+            </div>
+            <div class="form-group">
+                <label for="password">Парола</label>
+                <input type="password" id="password" name="password" required placeholder="Парола">
+            </div>
+            <div class="options">
+                <label class="remember-me">
+                    <input type="checkbox" name="rememberMe">
+                    <span>Запомни ме</span>
+                </label>
+                <a href="#" class="forgot-link">Помощ, не мога да вляза</a>
+            </div>
+            <button type="submit" class="login-btn">Вход</button>
+            <div th:if="${error}" class="error-message">
+                <p th:text="${error}"></p>
+            </div>
+        </form>
+        <p class="register-link">
+            Нямате акаунт? <a th:href="@{/users/register}">Регистрирайте се тук</a>.
+        </p>
+        <p class="error" th:if="${param.error}"
+           th:text="'Невалидно потребителско име или парола. Моля, опитайте отново.'"></p>
+    </div>
+</div>
+
+<footer class="simple-footer">
+    <p>© 2025 Gamify. Всички права запазени.</p>
+    <p>
+        <a href="#">Политика за поверителност</a> |
+        <a href="#">Правна информация</a> |
+        <a href="#">Поддръжка</a>
+    </p>
+</footer>
+</body>
+</html>

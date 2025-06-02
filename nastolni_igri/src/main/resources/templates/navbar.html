@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body>
+<div th:fragment="nav">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Игрова платформа</a>
+
+            <!-- Средна страна: Навигационни връзки -->
+            <ul class="nav-links">
+                <li><a th:href="@{/users/dashboard}">Табло</a></li>
+                <li><a th:href="@{/games}">Игри</a></li>
+                <li><a th:href="@{/invitations}">Покани</a></li>
+                <li><a th:href="@{/participants/history/1}">История</a></li>
+                <li><a th:href="@{/tournaments/create}">Турнири</a></li>
+            </ul>
+
+            <!-- Дясна страна: Бутон за инсталация -->
+            <button class="install-btn">Инсталирай приложение</button>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

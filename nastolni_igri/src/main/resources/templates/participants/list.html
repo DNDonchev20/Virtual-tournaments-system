@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Участници</title>
+    <link rel="stylesheet" th:href="@{/css/participants.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body>
+<div th:replace="navbar :: nav"></div>
+<div class="container">
+    <h1>Участници за игра с ID: <span th:text="${gameId}"></span></h1>
+
+    <!-- Списък с участници -->
+    <h2>Участници</h2>
+    <ul>
+        <li th:each="participant : ${participants}">
+            <span th:text="${participant.user.username}">Име на участника</span>
+        </li>
+    </ul>
+
+    <!-- Бутон за създаване на мач -->
+    <form th:action="@{/participants/{gameId}/create-match(gameId=${gameId})}" method="post">
+        <button type="submit">Създай мач</button>
+    </form>
+
+    <a th:href="@{/games}" class="btn">Назад към игрите</a>
+</div>
+</body>
+</html>
